@@ -1,9 +1,10 @@
 {
-  "name": "corridasimpuestossunat",
+  "name": "appweb",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "dev": "nodemon index.js",
     "migrate:indexes": "node utils/scripts/create-indexes.js"
   },

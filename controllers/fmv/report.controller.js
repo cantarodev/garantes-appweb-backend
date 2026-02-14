@@ -86,7 +86,14 @@ const exportEntitiesExcel = async (req, res) => {
         .json({ success: false, message: "columns (array) es requerido" });
     }
 
-    const filename = `entidades_${new Date().toISOString().slice(0, 19).replace(/:/g, '-').replace('T', '_')}.xlsx`;
+    const pad = (n) => String(n).padStart(2, '0');
+
+    const now = new Date();
+    const stamp =
+      `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}` +
+      `_${pad(now.getHours())}-${pad(now.getMinutes())}-${pad(now.getSeconds())}`;
+
+    const filename = `entidades_${stamp}.xlsx`;
 
 
     res.setHeader(
